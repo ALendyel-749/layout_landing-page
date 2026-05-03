@@ -1,3 +1,4 @@
+<!-- #region head -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,17 +7,390 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Landing Page</title>
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
-      href="./styles/main.scss"
+      href="/src/styles/main.scss"
     />
-    <script
-      src="scripts/main.js"
-      defer
-    ></script>
+    <title>BIKE</title>
   </head>
-  <body>
-    <h1>Landing Page</h1>
+  <!-- #endregion -->
+  <body class="body">
+    <header class="header">
+      <div class="header__top">
+        <a href="#">
+          <img
+            src="./Image/MyBiKE.svg"
+            alt="Bike logo"
+          />
+        </a>
+
+        <div class="header__icons">
+          <a
+            href="tel:+123455555555"
+            class="icon icon--phone"
+          ></a>
+          <a
+            href="#menu"
+            class="icon icon--menu"
+          ></a>
+        </div>
+      </div>
+
+      <div class="header__bottom">
+        <h1 class="header__title">Take the Streets</h1>
+      </div>
+    </header>
+
+    <aside
+      class="menu"
+      id="menu"
+    >
+      <div class="menu__top">
+        <a href="#">
+          <img
+            src="./Image/MyBiKE-logo-menu.svg"
+            alt="Bike logo"
+          />
+        </a>
+
+        <a
+          href="#"
+          class="icon icon--close"
+        ></a>
+      </div>
+
+      <nav class="nav nav__menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a
+              href="index.html"
+              class="nav__title nav__link"
+            >
+              home
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a
+              href="#about-us"
+              class="nav__title nav__link"
+            >
+              about us
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a
+              href="#compare-bikes"
+              class="nav__title nav__link"
+            >
+              compare bikes
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a
+              href="#details"
+              class="nav__title nav__link"
+            >
+              details
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a
+              href="#contact-us"
+              class="nav__title nav__link"
+            >
+              contacts
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="menu__bottom">
+        <ul class="menu__bottom--list">
+          <li class="menu__bottom--number">
+            <a
+              href="tel: +123455555555"
+              class="menu__bottom--link"
+            >
+              +1 234 5555-55-55
+            </a>
+          </li>
+          <li class="menu__bottom--title">Book a test ride</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section
+        class="move-free"
+        id="about-us"
+      >
+        <h2 class="move-free__title">Move Free</h2>
+        <p class="move-free__text">
+          Shift your ride, not gears. Find the fastest way to move in the city
+          as the bike adapts intuitively to power the speed you need.
+        </p>
+      </section>
+
+      <section class="compare-bikes">
+        <h2
+          class="compare-bikes__title"
+          id="compare-bikes"
+        >
+          Compare Bikes
+        </h2>
+
+        <div class="bike-card">
+          <div class="bike-card__top">
+            <img
+              src="/src/image/bike-cards/bike-cards-foto/sporty-4-bikes-foto.svg"
+              alt="bike-foto"
+            />
+          </div>
+          <div class="bike-card__middle">
+            <h3 class="bike-card__middle--title">Sporty 4</h3>
+            <p class="bike-card__middle--text">
+              The iconic frame brought to a new performance height as a sporty,
+              active ride.
+            </p>
+          </div>
+          <div class="bike-card__bottom">
+            <span class="bike-card__bottom--price">$2 590</span>
+          </div>
+        </div>
+
+        <div class="bike-card">
+          <div class="bike-card__top">
+            <img
+              src="/src/image/bike-cards/bike-cards-foto/ride-in-town-bikes-foto.svg"
+              alt="bike-foto"
+            />
+          </div>
+          <div class="bike-card__middle">
+            <h3 class="bike-card__middle--title">Ride in town ST</h3>
+            <p class="bike-card__middle--text">
+              An open frame for an upright riding position as the most
+              comfortable ride in town.
+            </p>
+          </div>
+          <div class="bike-card__bottom">
+            <span class="bike-card__bottom--price">$2 590</span>
+          </div>
+        </div>
+
+        <div class="bike-card">
+          <div class="bike-card__top">
+            <img
+              src="/src/image/bike-cards/bike-cards-foto/agile-ride-3.svg"
+              alt="bike-foto"
+            />
+          </div>
+          <div class="bike-card__middle">
+            <h3 class="bike-card__middle--title">Agile ride 3</h3>
+            <p class="bike-card__middle--text">
+              The lightweight frame that has earned its street tread as a sleek,
+              agile ride.
+            </p>
+          </div>
+          <div class="bike-card__bottom">
+            <span class="bike-card__bottom--price">$2 090</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="details"
+        id="details"
+      >
+        <h2 class="details__title">The Details</h2>
+        <div class="details-card">
+          <div class="details-card__top">
+            <img
+              class="details-card__top--img"
+              src="/src/image/details-cards/auto-unlock_1.svg"
+              alt="Details-foto"
+            />
+            <img
+              class="details-card__top--img"
+              src="/src/image/details-cards/auto-unlock_2.svg"
+              alt="Details-foto"
+            />
+          </div>
+
+          <div class="details-card__bottom">
+            <h3 class="details-card__bottom--title">Auto Unlock</h3>
+            <p class="details-card__bottom--text">
+              The app senses when you're nearby to unlock automatically. GPS
+              tracking so you know where your bike is and can track it anytime.
+            </p>
+          </div>
+        </div>
+
+        <div class="details-card">
+          <div class="details-card__top">
+            <img
+              class="details-card__top--img"
+              src="/src/image/details-cards/range&integrated-light_1.svg"
+              alt="Details-foto"
+            />
+            <img
+              class="details-card__top--img"
+              src="/src/image/details-cards/range&integrated-light_2.svg"
+              alt="Details-foto"
+            />
+          </div>
+
+          <div class="details-card__bottom">
+            <h3 class="details-card__bottom--title">
+              Range & Integrated lights
+            </h3>
+            <p class="details-card__bottom--text">
+              The removable battery has up to 70km battery autonomy and weighs
+              only 2.4 kg. Lights integrated into the frame give you always-on
+              visibility day and night.
+            </p>
+          </div>
+        </div>
+
+        <div class="details-card">
+          <div class="details-card__top">
+            <img
+              class="details-card__top--img"
+              src="/src/image/details-cards/Hydraulic-disc-brakes_1.svg"
+              alt="Details-foto"
+            />
+            <img
+              class="details-card__top--img"
+              src="/src/image/details-cards/Hydraulic-disc-brakes_2.svg"
+              alt="Details-foto"
+            />
+          </div>
+
+          <div class="details-card__bottom">
+            <h3 class="details-card__bottom--title">
+              Hydraulic disc brakes & Lightweight
+            </h3>
+            <p class="details-card__bottom--text">
+              Brakes with total stopping power the second you make contact. The
+              removable battery has up to 70km battery autonomy and weighs only
+              2.4 kg. Lights integrated into the frame give you always-on
+              visibility day and night.
+            </p>
+          </div>
+        </div>
+
+        <div class="details__button">
+          <button class="details__button-inside">Explore</button>
+        </div>
+      </section>
+
+      <section
+        class="contact-us"
+        id="contact-us"
+      >
+        <h2 class="contact-us__title">Contact us</h2>
+
+        <div class="contact-us__form-container">
+          <form
+            action="http://localhost:5500/api"
+            method="post"
+            class="contact-form"
+          >
+            <div class="contact-form__field">
+              <input
+                class="contact-form__input"
+                type="text"
+                name="firstname"
+                placeholder="Name"
+              />
+            </div>
+
+            <div class="contact-form__field">
+              <input
+                class="contact-form__input"
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+
+            <div class="contact-form__field">
+              <textarea
+                class="contact-form__textarea"
+                name="text"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+              ></textarea>
+            </div>
+
+            <div class="contact-form__field">
+              <button
+                class="contact-form__button"
+                type="submit"
+                name="button"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__title">
+          <div class="footer__title--phone">
+            <p class="footer__p">Phone</p>
+
+            <h3 class="footer__h3 footer--number">+1 234 5555-55-55</h3>
+          </div>
+
+          <div class="footer__title--email">
+            <p class="footer__p">Email</p>
+
+            <h3 class="footer__h3">hello@miami.com</h3>
+          </div>
+
+          <div class="footer__title--address">
+            <p class="footer__p">Addresse</p>
+
+            <h3 class="footer__h3">
+              400 first ave.
+              <br />
+              suite 700
+              <br />
+              Minneapolis, MN 55401
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer--img-wrapper">
+        <img
+          src="/src/image/footer/footer-img.svg"
+          alt="footer--img"
+          class="footer--img"
+        />
+      </div>
+    </footer>
   </body>
 </html>

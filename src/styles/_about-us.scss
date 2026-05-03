@@ -1,0 +1,9 @@
+.move-free {
+  &__title {
+    @include section-h2-title;
+  }
+
+  &__text {
+    @include section-text;
+  }
+}

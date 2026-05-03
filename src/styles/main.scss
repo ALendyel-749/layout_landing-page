@@ -1,3 +1,20 @@
-body {
+@import 'variables';
+@import 'mixins';
+@import 'header';
+@import 'nav';
+@import 'menu';
+@import 'icon';
+@import 'about-us';
+@import 'compare-bikes';
+@import 'details';
+@import 'contact-us';
+@import 'footer';
+
+.body {
   margin: 0;
+  background-color: #1d1d1d;
+}
+
+.main {
+  padding: 60px 20px 0;
 }

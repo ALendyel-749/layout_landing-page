@@ -1,0 +1,40 @@
+.compare-bikes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 92px;
+  gap: 48px;
+
+  &__title {
+    @include section-h2-title;
+  }
+}
+
+.bike-card {
+  display: flex;
+  flex-direction: column;
+
+  // gap: 48px;
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__middle {
+    &--title {
+      @include card-title;
+    }
+
+    &--text {
+      @include card-text;
+    }
+  }
+
+  &__bottom {
+    &--price {
+      @include card-price;
+    }
+  }
+}
