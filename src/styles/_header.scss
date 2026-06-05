@@ -1,7 +1,7 @@
 .header {
   box-sizing: border-box;
   padding: 24px 20px 80px;
-  height: 100vh;
+  min-height: 100vh;
 
   background-image: url(../image/Image-main.svg);
   background-position: 95%;
@@ -12,20 +12,46 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @include respond-to ("tablet") {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    padding: 36px 72px 80px 72px;
+    justify-content: center;
+    align-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond-to ("tablet") {
+      grid-column: span 6;
+    }
+
   }
 
   &__icons {
     display: flex;
     gap: 24px;
+
+    @include respond-to("tablet") {
+      gap: 32px;
+      height: 32px;
+    }
   }
 
   &__bottom {
     display: flex;
     justify-content: center;
+
+    @include respond-to("tablet") {
+      grid-column: span 6;
+    }
+
   }
 
   &__title {
@@ -36,5 +62,11 @@
     letter-spacing: -1.5px;
     color: #fff;
     margin: 0;
+    text-align: center;
+
+    @include respond-to("tablet") {
+      font-size: 64px;
+      padding-bottom: 130px;
+    }
   }
 }

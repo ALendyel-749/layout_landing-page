@@ -1,3 +1,22 @@
+
+@mixin respond-to($breakpoint) {
+
+  @if $breakpoint == "tablet" {
+    @media (min-width: 744px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop" {
+    @media (min-width: 1260px) {
+      @content;
+    }
+  }
+}
+
+
+
+
 @mixin section-h2-title {
   font-family: Poppins, sans-serif;
   font-weight: 500;
@@ -5,6 +24,10 @@
   line-height: 100%;
   letter-spacing: -1.5px;
   color: #fff;
+
+  @include respond-to("tablet") {
+    font-size: 48px;
+  }
 }
 
 @mixin section-text {
@@ -14,6 +37,10 @@
   line-height: 140%;
   letter-spacing: 0;
   color: #fff;
+
+  @include respond-to("tablet") {
+    
+  }
 }
 
 @mixin nav-title {

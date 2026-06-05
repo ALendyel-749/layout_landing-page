@@ -6,8 +6,19 @@
   padding-top: 92px;
   gap: 48px;
 
+  @include respond-to("tablet") {
+    padding-top: 132px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+
   &__title {
     @include section-h2-title;
+
+    @include respond-to("tablet") {
+      grid-column: 2/6;
+    }
   }
 }
 
@@ -15,7 +26,11 @@
   display: flex;
   flex-direction: column;
 
-  // gap: 48px;
+  @include respond-to("tablet") {
+    grid-column: 2/6;
+  }
+
+  
   &__top {
     display: flex;
     justify-content: center;
