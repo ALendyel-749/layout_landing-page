@@ -6,15 +6,74 @@
   padding-top: 80px;
   gap: 48px;
 
+  @include respond-to(tablet) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+  }
+
   &__title {
     @include section-h2-title;
+
+    @include respond-to(tablet) {
+      grid-column: 2/7;
+    }
   }
 
   &__form-container {
     display: flex;
     width: 100%;
     justify-content: center;
+
+    @include respond-to(tablet) {
+      grid-column: span 3;
+
+    }
+
   }
+
+  &__info {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    font-style: normal;
+    flex-direction: column;
+    gap: 24px;
+    padding: 48px 20px 0 20px;
+
+    @include respond-to(tablet) {
+      grid-column: span 3;
+      padding: 0 24px;
+      align-self: start;
+    }
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    gap: 8px;
+
+  }
+
+  &__label {
+    @include footer-p-title;
+    margin: 0;
+  }
+
+  &__value {
+    @include footer-h3-title;
+    margin: 0;
+    text-decoration: none;
+    color: inherit;
+    color: #fff;
+
+    &--phone {
+      color: #fff;
+    }
+
+  }
+
 }
 
 .contact-form {
@@ -63,3 +122,4 @@
     @include form-button;
   }
 }
+
