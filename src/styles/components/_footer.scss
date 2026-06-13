@@ -5,9 +5,9 @@
   display: block; /* Переконайся, що він поводиться як блочний елемент */
   width: 100%;
   padding-top: 60px;
-  
+
   // Додаємо страховку для флекс-контейнерів:
-  flex-shrink: 0; 
+  flex-shrink: 0;
 
   &__img {
     display: block;
@@ -20,9 +20,9 @@
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     padding-top: 100px;
-    
+
     &__img {
       min-height: auto; /* На планшетах повертаємо автоматичну висоту */
     }
@@ -31,7 +31,7 @@
   // ==========================================
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     padding-top: 120px;
   }
 }

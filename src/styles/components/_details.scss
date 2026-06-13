@@ -27,7 +27,7 @@
     width: 100%;
   }
 
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     padding: 120px 72px 60px;
 
     &__title {
@@ -39,7 +39,7 @@
     }
   }
 
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     padding: 160px 120px 80px;
 
     &__title {
@@ -64,7 +64,7 @@
   &__gallery {
     // СТРОГО ЗА МОБІЛЬНИМ МАКЕТОМ: 4-колонковий Grid
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     width: 100%;
     box-sizing: border-box;
@@ -73,7 +73,7 @@
   &__img {
     display: block;
     height: 160px; /* Фіксована висота для однакових мобільних прямокутників */
-    
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -86,14 +86,26 @@
       grid-column: span 1;
     }
 
-    &--unlock-1 { background-image: url(../image/details-cards/auto-unlock_1.svg); }
-    &--unlock-2 { background-image: url(../image/details-cards/auto-unlock_2.svg); }
-    
-    &--range-1 { background-image: url(../image/details-cards/range&integrated-light_1.svg); }
-    &--range-2 { background-image: url(../image/details-cards/range&integrated-light_2.svg); }
-    
-    &--brakes-1 { background-image: url(../image/details-cards/Hydraulic-disc-brakes_1.svg); }
-    &--brakes-2 { background-image: url(../image/details-cards/Hydraulic-disc-brakes_2.svg); }
+    &--unlock-1 {
+      background-image: url(../image/details-cards/auto-unlock_1.svg);
+    }
+    &--unlock-2 {
+      background-image: url(../image/details-cards/auto-unlock_2.svg);
+    }
+
+    &--range-1 {
+      background-image: url(../image/details-cards/range&integrated-light_1.svg);
+    }
+    &--range-2 {
+      background-image: url(../image/details-cards/range&integrated-light_2.svg);
+    }
+
+    &--brakes-1 {
+      background-image: url(../image/details-cards/Hydraulic-disc-brakes_1.svg);
+    }
+    &--brakes-2 {
+      background-image: url(../image/details-cards/Hydraulic-disc-brakes_2.svg);
+    }
   }
 
   &__content {
@@ -130,12 +142,12 @@
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     gap: 32px;
 
     &__gallery {
       // Перемикаємося на 12-колонкову базу для більших екранів
-      grid-template-columns: repeat(12, 1fr); 
+      grid-template-columns: repeat(12, 1fr);
       gap: 24px;
     }
 
@@ -167,7 +179,7 @@
   // ==========================================
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     gap: 32px;
 
     &__gallery {

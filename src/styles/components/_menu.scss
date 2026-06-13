@@ -60,7 +60,7 @@
   &__contact-link {
     @include nav-title; /* Використовуємо наш шрифт */
 
-    font-size: 16px;    // Коригуємо розмір під цей блок
+    font-size: 16px; // Коригуємо розмір під цей блок
     line-height: 1.68; // 27px
     text-decoration: none;
   }
@@ -76,7 +76,7 @@
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     padding: 36px 72px 80px;
   }
 }

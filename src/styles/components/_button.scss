@@ -10,15 +10,17 @@
   align-items: center;
   width: 278px;
   height: 56px;
-  
+
   border: none;
   border-radius: 40px;
   cursor: pointer;
-  
+
   /* Наш міксин шрифту кнопки з abstracts/typography */
-  @include form-button; 
-  
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  @include form-button;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
 
   &:hover {
     background-color: #e2e2e2; /* Легке потемніння при наведенні */
@@ -30,7 +32,7 @@
 
   // Модифікатор для кнопки в секції Details
   &--explore {
-    @include respond-to("tablet") {
+    @include respond-to('tablet') {
       width: 100%; /* На планшеті стає на всю ширину відведених їй колонок */
     }
   }

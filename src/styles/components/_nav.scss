@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -22,11 +22,13 @@
     @include nav-title; /* Наш фірмовий шрифт з abstracts/typography */
 
     display: inline-block;
-    
+
     text-transform: uppercase;
     text-decoration: none;
-    
-    transition: color 0.2s ease, transform 0.2s ease;
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
 
     &:hover {
       color: #7e7e83; /* Плавна зміна кольору при наведенні для кращого UX */

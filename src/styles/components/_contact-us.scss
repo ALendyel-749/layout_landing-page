@@ -56,7 +56,7 @@
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     padding: 100px 72px 60px;
 
     &__wrapper {
@@ -74,7 +74,7 @@
   // ==========================================
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     padding: 140px 120px 80px;
 
     &__wrapper {
@@ -146,11 +146,11 @@
   // ==========================================
   // МОДИФІКАЦІЯ СІТКИ ДЛЯ ФОРМИ
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     grid-column: span 3; /* Форма займає рівно половину сітки на планшеті */
   }
 
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     grid-column: span 6; /* На десктопі займає 6 колонок з 12 */
   }
 }

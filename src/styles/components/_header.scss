@@ -47,11 +47,11 @@
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     background-image: url(../image/main-img/Image-main_tablet.svg);
     background-size: cover;
     background-position: 100%;
-    
+
     width: 100%;
     padding: 36px 72px 80px;
 
@@ -59,7 +59,6 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 24px;
     place-content: space-between center;
-
 
     &__top {
       grid-column: span 6;
@@ -83,9 +82,9 @@
   // ==========================================
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     /* Додаємо фіксовані відступи зверху/знизу замість мобільних, щоб зафіксувати висоту 100vh */
-    padding: 48px 120px 80px; 
+    padding: 48px 120px 80px;
     grid-template-columns: repeat(12, 1fr);
 
     background-image: url(../image/main-img/Image-main_desktop.svg);

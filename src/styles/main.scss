@@ -24,11 +24,9 @@
     padding: 24px 72px 80px;
   }
 
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     padding: 120px;
   }
-
-
 }
 
 // * {

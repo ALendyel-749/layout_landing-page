@@ -3,7 +3,7 @@
   // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
   // ==========================================
   padding: 92px 20px 40px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,14 +26,14 @@
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     padding: 132px 72px 60px;
 
     &__grid {
       display: grid;
 
       /* Робимо 3 однакові колонки для 3-х карток */
-      grid-template-columns: repeat(3, 1fr); 
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
   }
@@ -41,12 +41,12 @@
   // ==========================================
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     padding: 160px 120px 80px;
 
     &__grid {
       /* На десктопі можна збільшити відстань між картками */
-      gap: 32px; 
+      gap: 32px;
     }
   }
 }

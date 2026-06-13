@@ -19,10 +19,10 @@
   font-family: Poppins, sans-serif;
   font-size: 32px;
   font-weight: 500;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: -1.5px;
 
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     font-size: 48px;
   }
 }
@@ -43,7 +43,7 @@
   font-family: Poppins, sans-serif;
   font-size: 22px;
   font-weight: 600;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: 2px;
 }
 

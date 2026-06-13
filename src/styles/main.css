@@ -1,0 +1,784 @@
+@charset "UTF-8";
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* Іконка завжди масштабується під розмір блока */
+  transition: opacity 0.2s ease;
+}
+.icon:hover {
+  opacity: 0.8; /* Базовий ефект при наведенні для інтерактивності */
+}
+.icon--phone {
+  background-image: url(../image/icons/Phone-logo.svg);
+}
+.icon--menu {
+  background-image: url(../image/icons/Burger-menu.svg);
+}
+.icon--close {
+  background-image: url(../image/icons/Buttons-close.svg);
+}
+
+.button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 278px;
+  height: 56px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  /* Наш міксин шрифту кнопки з abstracts/typography */
+  color: #1d1d1d;
+  background-color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.68;
+  letter-spacing: 0;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.button:hover {
+  background-color: #e2e2e2; /* Легке потемніння при наведенні */
+}
+.button:active {
+  transform: scale(0.98); /* Ефект натискання */
+}
+@media (min-width: 744px) {
+  .button--explore {
+    width: 100%; /* На планшеті стає на всю ширину відведених їй колонок */
+  }
+}
+
+.nav {
+  width: 100%;
+}
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.nav__item {
+  display: block; /* Скидаємо flex, бо всередині елемента лежить просто одне посилання */
+}
+.nav__link {
+  color: #1d1d1d;
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 2px;
+  /* Наш фірмовий шрифт з abstracts/typography */
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav__link:hover {
+  color: #7e7e83; /* Плавна зміна кольору при наведенні для кращого UX */
+  transform: translateX(4px); /* Легке елегантне зсування тексту праворуч */
+}
+
+.menu {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  z-index: 100; /* Додав z-index, щоб меню точно перекривало весь контент сайту */
+  min-height: 100vh;
+  padding: 24px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #c2c2c2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; /* Додав плавне згасання/появу меню */
+}
+.menu:target {
+  opacity: 1;
+  pointer-events: all;
+}
+.menu__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__logo-link {
+  display: inline-block;
+}
+.menu__logo-img {
+  display: block;
+  height: auto;
+}
+.menu__bottom {
+  margin-top: auto; /* Виштовхує контакти в самий низ меню на мобілці */
+}
+.menu__contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.menu__contact-item {
+  margin-top: 40px;
+}
+.menu__contact-link {
+  color: #1d1d1d;
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 2px;
+  /* Використовуємо наш шрифт */
+  font-size: 16px;
+  line-height: 1.68;
+  text-decoration: none;
+}
+.menu__contact-title {
+  color: #1d1d1d;
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 2px;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+@media (min-width: 744px) {
+  .menu {
+    padding: 36px 72px 80px;
+  }
+}
+
+.header {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 24px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(../image/main-img/Image-main-mb-version.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__icons {
+  display: flex;
+  gap: 24px;
+}
+.header__bottom {
+  display: flex;
+  justify-content: center;
+}
+.header__title {
+  margin: 0;
+  padding-bottom: 88px;
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -1.5px;
+  text-align: center;
+}
+@media (min-width: 744px) {
+  .header {
+    background-image: url(../image/main-img/Image-main_tablet.svg);
+    background-size: cover;
+    background-position: 100%;
+    width: 100%;
+    padding: 36px 72px 80px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    place-content: space-between center;
+  }
+  .header__top {
+    grid-column: span 6;
+  }
+  .header__icons {
+    height: 32px;
+    gap: 32px;
+  }
+  .header__bottom {
+    grid-column: span 6;
+  }
+  .header__title {
+    padding-bottom: 0; /* Скидаємо мобільний паддінг, бо grid сам контролює простір */
+    font-size: 64px;
+  }
+}
+@media (min-width: 1260px) {
+  .header {
+    /* Додаємо фіксовані відступи зверху/знизу замість мобільних, щоб зафіксувати висоту 100vh */
+    padding: 48px 120px 80px;
+    grid-template-columns: repeat(12, 1fr);
+    background-image: url(../image/main-img/Image-main_desktop.svg);
+    background-position: center;
+  }
+  .header__top {
+    grid-column: span 12;
+  }
+  .header__bottom {
+    grid-column: span 12;
+  }
+}
+
+.move-free {
+  padding: 40px 20px;
+}
+.move-free__title {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+@media (min-width: 744px) {
+  .move-free__title {
+    font-size: 48px;
+  }
+}
+.move-free__title {
+  margin: 0 0 24px;
+}
+.move-free__text {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0;
+}
+@media (min-width: 744px) {
+  .move-free {
+    padding: 60px 72px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    align-items: center;
+  }
+  .move-free__title {
+    margin-bottom: 0;
+    grid-column: span 3;
+  }
+  .move-free__text {
+    grid-column: span 3;
+  }
+}
+@media (min-width: 1260px) {
+  .move-free {
+    padding: 80px 120px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .move-free__title {
+    grid-column: span 5;
+  }
+  .move-free__text {
+    grid-column: 7/span 6;
+  }
+}
+
+.compare-bikes {
+  padding: 92px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+.compare-bikes__title {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+@media (min-width: 744px) {
+  .compare-bikes__title {
+    font-size: 48px;
+  }
+}
+.compare-bikes__title {
+  margin: 0;
+  text-align: center;
+}
+.compare-bikes__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+@media (min-width: 744px) {
+  .compare-bikes {
+    padding: 132px 72px 60px;
+  }
+  .compare-bikes__grid {
+    display: grid;
+    /* Робимо 3 однакові колонки для 3-х карток */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+@media (min-width: 1260px) {
+  .compare-bikes {
+    padding: 160px 120px 80px;
+  }
+  .compare-bikes__grid {
+    /* На десктопі можна збільшити відстань між картками */
+    gap: 32px;
+  }
+}
+
+.bike-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Однаковий відступ між картинкою, текстом і ціною */
+  width: 100%;
+}
+.bike-card__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.bike-card__img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.bike-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Відступ між назвою та описом */
+}
+.bike-card__title {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0;
+}
+.bike-card__text {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0;
+}
+.bike-card__footer {
+  margin-top: auto; /* Виштовхує ціну завжди донизу, якщо тексти різної довжини */
+}
+.bike-card__price {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.contact-us {
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+.contact-us__title {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+@media (min-width: 744px) {
+  .contact-us__title {
+    font-size: 48px;
+  }
+}
+.contact-us__title {
+  margin: 0;
+  text-align: center;
+}
+.contact-us__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+.contact-us__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  font-style: normal; /* Скидаємо системний нахил тегу <address> */
+}
+.contact-us__info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact-us__label {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0;
+  opacity: 0.6; /* Зазвичай лейбли роблять трохи тьмянішими для контрасту */
+}
+.contact-us__link, .contact-us__text {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0;
+  color: #fff;
+  text-decoration: none;
+}
+@media (min-width: 744px) {
+  .contact-us {
+    padding: 100px 72px 60px;
+  }
+  .contact-us__wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px;
+  }
+  .contact-us__info {
+    grid-column: span 3;
+    align-self: start;
+  }
+}
+@media (min-width: 1260px) {
+  .contact-us {
+    padding: 140px 120px 80px;
+  }
+  .contact-us__wrapper {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+  }
+  .contact-us__info {
+    grid-column: 8/span 5; /* Форма займе ліву частину, а інфо — праву з відступом */
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.contact-form__group {
+  width: 100%;
+}
+.contact-form__input, .contact-form__textarea, .contact-form__button {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: none; /* Скидаємо стандартні рамки браузера */
+  outline: none;
+}
+.contact-form__input {
+  height: 48px;
+  padding: 14px 20px;
+  border-radius: 40px;
+  color: #7e7e83;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: 0;
+}
+.contact-form__textarea {
+  min-height: 148px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  resize: vertical; /* Дозволяємо користувачу тягнути тільки вниз, щоб не ламати ширину */
+  color: #7e7e83;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: 0;
+}
+.contact-form__button {
+  height: 56px;
+  padding: 14px 16px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  color: #1d1d1d;
+  background-color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.68;
+  letter-spacing: 0;
+}
+.contact-form__button:hover {
+  opacity: 0.9; /* Базовий ефект при наведенні */
+}
+@media (min-width: 744px) {
+  .contact-form {
+    grid-column: span 3; /* Форма займає рівно половину сітки на планшеті */
+  }
+}
+@media (min-width: 1260px) {
+  .contact-form {
+    grid-column: span 6; /* На десктопі займає 6 колонок з 12 */
+  }
+}
+
+.details {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.details__title {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+@media (min-width: 744px) {
+  .details__title {
+    font-size: 48px;
+  }
+}
+.details__title {
+  margin: 0;
+  text-align: center;
+}
+.details__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+.details__actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media (min-width: 744px) {
+  .details {
+    padding: 120px 72px 60px;
+  }
+  .details__title {
+    padding-bottom: 64px;
+  }
+  .details__grid {
+    gap: 64px;
+  }
+}
+@media (min-width: 1260px) {
+  .details {
+    padding: 160px 120px 80px;
+  }
+  .details__title {
+    padding-bottom: 80px;
+  }
+  .details__grid {
+    gap: 120px;
+  }
+}
+
+.details-card {
+  display: flex;
+  flex-direction: column; /* Текст завжди строго під картинками */
+  gap: 24px;
+  width: 100%;
+}
+.details-card__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.details-card__img {
+  display: block;
+  height: 160px; /* Фіксована висота для однакових мобільних прямокутників */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.details-card__img:first-child {
+  grid-column: span 3;
+}
+.details-card__img:last-child {
+  grid-column: span 1;
+}
+.details-card__img--unlock-1 {
+  background-image: url(../image/details-cards/auto-unlock_1.svg);
+}
+.details-card__img--unlock-2 {
+  background-image: url(../image/details-cards/auto-unlock_2.svg);
+}
+.details-card__img--range-1 {
+  background-image: url(../image/details-cards/range&integrated-light_1.svg);
+}
+.details-card__img--range-2 {
+  background-image: url(../image/details-cards/range&integrated-light_2.svg);
+}
+.details-card__img--brakes-1 {
+  background-image: url(../image/details-cards/Hydraulic-disc-brakes_1.svg);
+}
+.details-card__img--brakes-2 {
+  background-image: url(../image/details-cards/Hydraulic-disc-brakes_2.svg);
+}
+.details-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.details-card__caption {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0;
+}
+.details-card__text {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0;
+}
+.details-card--reverse .details-card__img:first-child {
+  grid-column: span 1;
+}
+.details-card--reverse .details-card__img:last-child {
+  grid-column: span 3;
+}
+@media (min-width: 744px) {
+  .details-card {
+    gap: 32px;
+  }
+  .details-card__gallery {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  .details-card__img {
+    height: 260px; /* Збільшуємо висоту під планшет */
+  }
+  .details-card__img:first-child {
+    grid-column: span 8;
+  }
+  .details-card__img:last-child {
+    grid-column: span 4;
+  }
+  .details-card--reverse .details-card__img:first-child {
+    grid-column: span 4;
+  }
+  .details-card--reverse .details-card__img:last-child {
+    grid-column: span 8;
+  }
+}
+@media (min-width: 1260px) {
+  .details-card {
+    gap: 32px;
+  }
+  .details-card__gallery {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+  .details-card__img {
+    height: 440px; /* Великі прямокутники для десктопа */
+  }
+  .details-card__img:first-child {
+    grid-column: span 8;
+  }
+  .details-card__img:last-child {
+    grid-column: span 4;
+  }
+  .details-card--reverse .details-card__img:first-child {
+    grid-column: span 4;
+  }
+  .details-card--reverse .details-card__img:last-child {
+    grid-column: span 8;
+  }
+}
+
+.footer {
+  display: block; /* Переконайся, що він поводиться як блочний елемент */
+  width: 100%;
+  padding-top: 60px;
+  flex-shrink: 0;
+}
+.footer__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 100px; /* Задай мінімальну висоту, щоб картинка точно мала фізичний розмір */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 744px) {
+  .footer {
+    padding-top: 100px;
+  }
+  .footer__img {
+    min-height: auto; /* На планшетах повертаємо автоматичну висоту */
+  }
+}
+@media (min-width: 1260px) {
+  .footer {
+    padding-top: 120px;
+  }
+}
+
+.body {
+  margin: 0;
+  background-color: #1d1d1d;
+}
+
+.main {
+  padding: 60px 20px 0;
+}
+@media (min-width: 744px) {
+  .main {
+    padding: 24px 72px 80px;
+  }
+}
+@media (min-width: 1260px) {
+  .main {
+    padding: 120px;
+  }
+}/*# sourceMappingURL=main.css.map */

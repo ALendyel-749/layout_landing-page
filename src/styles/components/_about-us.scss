@@ -19,7 +19,7 @@
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
-  @include respond-to("tablet") {
+  @include respond-to('tablet') {
     padding: 60px 72px;
 
     display: grid;
@@ -40,9 +40,12 @@
   // ==========================================
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
-  @include respond-to("desktop") {
+  @include respond-to('desktop') {
     padding: 80px 120px;
-    grid-template-columns: repeat(12, 1fr); // Переводимо на 12 колонок для гармонії з шапкою
+    grid-template-columns: repeat(
+      12,
+      1fr
+    ); // Переводимо на 12 колонок для гармонії з шапкою
 
     &__title {
       grid-column: span 5; // Заголовок займає 5 колонок ліворуч
