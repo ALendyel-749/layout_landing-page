@@ -9,6 +9,7 @@
 
   &__title {
     @include section-h2-title;
+
     margin: 0;
     text-align: center;
   }
@@ -104,11 +105,13 @@
 
   &__caption {
     @include card-title;
+
     margin: 0;
   }
 
   &__text {
     @include card-text;
+
     margin: 0;
   }
 

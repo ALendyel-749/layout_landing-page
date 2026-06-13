@@ -7,8 +7,7 @@
     @media (min-width: 744px) {
       @content;
     }
-  }
-  @else if $breakpoint == "desktop" {
+  } @else if $breakpoint == "desktop" {
     @media (min-width: 1260px) {
       @content;
     }

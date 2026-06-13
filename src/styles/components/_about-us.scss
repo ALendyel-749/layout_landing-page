@@ -6,11 +6,13 @@
 
   &__title {
     @include section-h2-title;
-    margin: 0 0 24px 0; // Обнуляємо маржини та робимо відступ знизу до тексту
+
+    margin: 0 0 24px; // Обнуляємо маржини та робимо відступ знизу до тексту
   }
 
   &__text {
     @include section-text;
+
     margin: 0;
   }
 

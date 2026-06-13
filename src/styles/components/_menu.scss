@@ -4,10 +4,7 @@
   // ==========================================
   box-sizing: border-box;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 100; /* Додав z-index, щоб меню точно перекривало весь контент сайту */
 
   min-height: 100vh;
@@ -62,6 +59,7 @@
 
   &__contact-link {
     @include nav-title; /* Використовуємо наш шрифт */
+
     font-size: 16px;    // Коригуємо розмір під цей блок
     line-height: 1.68; // 27px
     text-decoration: none;
@@ -69,6 +67,7 @@
 
   &__contact-title {
     @include nav-title;
+
     font-size: 12px;
     line-height: 1.33; // 16px
     text-transform: uppercase;

@@ -11,6 +11,7 @@
 
   &__title {
     @include section-h2-title;
+
     margin: 0;
     text-align: center;
   }
@@ -38,6 +39,7 @@
 
   &__label {
     @include footer-p-title;
+
     margin: 0;
     opacity: 0.6; /* Зазвичай лейбли роблять трохи тьмянішими для контрасту */
   }
@@ -45,6 +47,7 @@
   &__link,
   &__text {
     @include footer-h3-title;
+
     margin: 0;
     color: #fff;
     text-decoration: none;

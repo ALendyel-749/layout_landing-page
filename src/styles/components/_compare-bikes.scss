@@ -11,6 +11,7 @@
 
   &__title {
     @include section-h2-title;
+
     margin: 0;
     text-align: center;
   }
@@ -30,6 +31,7 @@
 
     &__grid {
       display: grid;
+
       /* Робимо 3 однакові колонки для 3-х карток */
       grid-template-columns: repeat(3, 1fr); 
       gap: 24px;
@@ -80,11 +82,13 @@
 
   &__title {
     @include card-title;
+
     margin: 0;
   }
 
   &__text {
     @include card-text;
+
     margin: 0;
   }
 

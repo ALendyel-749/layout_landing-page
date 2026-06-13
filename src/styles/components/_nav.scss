@@ -20,6 +20,7 @@
 
   &__link {
     @include nav-title; /* Наш фірмовий шрифт з abstracts/typography */
+
     display: inline-block;
     
     text-transform: uppercase;

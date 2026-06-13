@@ -1,7 +1,6 @@
 @import 'abstracts/mixins';
 @import 'abstracts/typography';
 @import 'abstracts/variables';
-
 @import 'components/icon';
 @import 'components/button';
 @import 'components/nav';
@@ -22,7 +21,7 @@
   padding: 60px 20px 0;
 
   @include respond-to(tablet) {
-    padding: 24px 72px 80px 72px;
+    padding: 24px 72px 80px;
   }
 
   @include respond-to("desktop") {
