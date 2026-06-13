@@ -1,0 +1,53 @@
+.move-free {
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
+  // ==========================================
+  padding: 40px 20px; // Додав базові відступи для мобілки, щоб текст не лип до країв
+
+  &__title {
+    @include section-h2-title;
+    margin: 0 0 24px 0; // Обнуляємо маржини та робимо відступ знизу до тексту
+  }
+
+  &__text {
+    @include section-text;
+    margin: 0;
+  }
+
+  // ==========================================
+  // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
+  // ==========================================
+  @include respond-to("tablet") {
+    padding: 60px 72px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    align-items: center;
+
+    &__title {
+      margin-bottom: 0; // Прибираємо маржин, бо тепер вони в один рядок через grid
+      grid-column: span 3;
+    }
+
+    &__text {
+      grid-column: span 3;
+    }
+  }
+
+  // ==========================================
+  // ДЕСКТОПНА ВЕРСІЯ (Desktop)
+  // ==========================================
+  @include respond-to("desktop") {
+    padding: 80px 120px;
+    grid-template-columns: repeat(12, 1fr); // Переводимо на 12 колонок для гармонії з шапкою
+
+    &__title {
+      grid-column: span 5; // Заголовок займає 5 колонок ліворуч
+    }
+
+    &__text {
+      grid-column: 7 / span 6; // Текст починається з 7-ї колонки і займає 6 колонок праворуч
+    }
+  }
+}

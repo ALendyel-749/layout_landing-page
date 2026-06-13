@@ -1,0 +1,33 @@
+.icon {
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Глобальний компонент іконки)
+  // ==========================================
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* Іконка завжди масштабується під розмір блока */
+  
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8; /* Базовий ефект при наведенні для інтерактивності */
+  }
+
+  // ==========================================
+  // МОДИФІКАТОРИ (Конкретні зображення)
+  // ==========================================
+  &--phone {
+    background-image: url(../image/icons/Phone-logo.svg);
+  }
+
+  &--menu {
+    background-image: url(../image/icons/Burger-menu.svg);
+  }
+
+  &--close {
+    background-image: url(../image/icons/Buttons-close.svg);
+  }
+}

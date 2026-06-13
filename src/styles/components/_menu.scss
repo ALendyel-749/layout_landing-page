@@ -1,0 +1,83 @@
+.menu {
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
+  // ==========================================
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Додав z-index, щоб меню точно перекривало весь контент сайту */
+
+  min-height: 100vh;
+  padding: 24px 20px 80px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  background-color: #c2c2c2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; /* Додав плавне згасання/появу меню */
+
+  // Логіка відкриття меню через CSS Anchor (#menu)
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-link {
+    display: inline-block;
+  }
+
+  &__logo-img {
+    display: block;
+    height: auto;
+  }
+
+  &__bottom {
+    margin-top: auto; /* Виштовхує контакти в самий низ меню на мобілці */
+  }
+
+  &__contact-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contact-item {
+    margin-top: 40px;
+  }
+
+  &__contact-link {
+    @include nav-title; /* Використовуємо наш шрифт */
+    font-size: 16px;    // Коригуємо розмір під цей блок
+    line-height: 1.68; // 27px
+    text-decoration: none;
+  }
+
+  &__contact-title {
+    @include nav-title;
+    font-size: 12px;
+    line-height: 1.33; // 16px
+    text-transform: uppercase;
+  }
+
+  // ==========================================
+  // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
+  // ==========================================
+  @include respond-to("tablet") {
+    padding: 36px 72px 80px;
+  }
+}

@@ -1,0 +1,98 @@
+.compare-bikes {
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
+  // ==========================================
+  padding: 92px 20px 40px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  &__title {
+    @include section-h2-title;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+
+  // ==========================================
+  // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
+  // ==========================================
+  @include respond-to("tablet") {
+    padding: 132px 72px 60px;
+
+    &__grid {
+      display: grid;
+      /* Робимо 3 однакові колонки для 3-х карток */
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 24px;
+    }
+  }
+
+  // ==========================================
+  // ДЕСКТОПНА ВЕРСІЯ (Desktop)
+  // ==========================================
+  @include respond-to("desktop") {
+    padding: 160px 120px 80px;
+
+    &__grid {
+      /* На десктопі можна збільшити відстань між картками */
+      gap: 32px; 
+    }
+  }
+}
+
+// Блок картки велосипеда (самостійний компонент)
+.bike-card {
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Мобільна версія)
+  // ==========================================
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Однаковий відступ між картинкою, текстом і ціною */
+  width: 100%;
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Відступ між назвою та описом */
+  }
+
+  &__title {
+    @include card-title;
+    margin: 0;
+  }
+
+  &__text {
+    @include card-text;
+    margin: 0;
+  }
+
+  &__footer {
+    margin-top: auto; /* Виштовхує ціну завжди донизу, якщо тексти різної довжини */
+  }
+
+  &__price {
+    @include card-price;
+  }
+}

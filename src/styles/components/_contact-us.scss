@@ -1,0 +1,153 @@
+.contact-us {
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
+  // ==========================================
+  padding: 80px 20px 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  &__title {
+    @include section-h2-title;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    font-style: normal; /* Скидаємо системний нахил тегу <address> */
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    @include footer-p-title;
+    margin: 0;
+    opacity: 0.6; /* Зазвичай лейбли роблять трохи тьмянішими для контрасту */
+  }
+
+  &__link,
+  &__text {
+    @include footer-h3-title;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  // ==========================================
+  // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
+  // ==========================================
+  @include respond-to("tablet") {
+    padding: 100px 72px 60px;
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 32px;
+    }
+
+    &__info {
+      grid-column: span 3;
+      align-self: start;
+    }
+  }
+
+  // ==========================================
+  // ДЕСКТОПНА ВЕРСІЯ (Desktop)
+  // ==========================================
+  @include respond-to("desktop") {
+    padding: 140px 120px 80px;
+
+    &__wrapper {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 40px;
+    }
+
+    &__info {
+      grid-column: 8 / span 5; /* Форма займе ліву частину, а інфо — праву з відступом */
+    }
+  }
+}
+
+// Блок форми (самостійний компонент)
+.contact-form {
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Мобільна версія)
+  // ==========================================
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  &__group {
+    width: 100%;
+  }
+
+  &__input,
+  &__textarea,
+  &__button {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: none; /* Скидаємо стандартні рамки браузера */
+    outline: none;
+  }
+
+  &__input {
+    height: 48px;
+    padding: 14px 20px;
+    border-radius: 40px;
+
+    @include form-text;
+  }
+
+  &__textarea {
+    min-height: 148px;
+    padding: 14px 20px;
+    border-radius: 16px;
+    resize: vertical; /* Дозволяємо користувачу тягнути тільки вниз, щоб не ламати ширину */
+
+    @include form-text;
+  }
+
+  &__button {
+    height: 56px;
+    padding: 14px 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    @include form-button;
+
+    &:hover {
+      opacity: 0.9; /* Базовий ефект при наведенні */
+    }
+  }
+
+  // ==========================================
+  // МОДИФІКАЦІЯ СІТКИ ДЛЯ ФОРМИ
+  // ==========================================
+  @include respond-to("tablet") {
+    grid-column: span 3; /* Форма займає рівно половину сітки на планшеті */
+  }
+
+  @include respond-to("desktop") {
+    grid-column: span 6; /* На десктопі займає 6 колонок з 12 */
+  }
+}

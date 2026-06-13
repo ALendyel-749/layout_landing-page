@@ -1,14 +1,17 @@
-@import 'variables';
-@import 'mixins';
-@import 'header';
-@import 'nav';
-@import 'menu';
-@import 'icon';
-@import 'about-us';
-@import 'compare-bikes';
-@import 'details';
-@import 'contact-us';
-@import 'footer';
+@import 'abstracts/mixins';
+@import 'abstracts/typography';
+@import 'abstracts/variables';
+
+@import 'components/icon';
+@import 'components/button';
+@import 'components/nav';
+@import 'components/menu';
+@import 'components/header';
+@import 'components/about-us';
+@import 'components/compare-bikes';
+@import 'components/contact-us';
+@import 'components/details';
+@import 'components/footer';
 
 .body {
   margin: 0;
@@ -18,7 +21,17 @@
 .main {
   padding: 60px 20px 0;
 
-    @include respond-to(tablet) {
+  @include respond-to(tablet) {
     padding: 24px 72px 80px 72px;
   }
+
+  @include respond-to("desktop") {
+    padding: 120px;
+  }
+
+
 }
+
+// * {
+//   outline: 1px solid red !important;
+// }

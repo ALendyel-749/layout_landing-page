@@ -1,0 +1,199 @@
+// ==========================================
+// DETAILS COMPONENT (Глобальна секція)
+// ==========================================
+.details {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__title {
+    @include section-h2-title;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @include respond-to("tablet") {
+    padding: 120px 72px 60px;
+
+    &__title {
+      padding-bottom: 64px;
+    }
+
+    &__grid {
+      gap: 64px;
+    }
+  }
+
+  @include respond-to("desktop") {
+    padding: 160px 120px 80px;
+
+    &__title {
+      padding-bottom: 80px;
+    }
+
+    &__grid {
+      gap: 120px;
+    }
+  }
+}
+
+// ==========================================
+// DETAILS CARD COMPONENT (Картки)
+// ==========================================
+.details-card {
+  display: flex;
+  flex-direction: column; /* Текст завжди строго під картинками */
+  gap: 24px;
+  width: 100%;
+
+  &__gallery {
+    // СТРОГО ЗА МОБІЛЬНИМ МАКЕТОМ: 4-колонковий Grid
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__img {
+    display: block;
+    height: 160px; /* Фіксована висота для однакових мобільних прямокутників */
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    // Мобільна пропорція: перша широка (3 колонки), друга вузька (1 колонка)
+    &:first-child {
+      grid-column: span 3;
+    }
+    &:last-child {
+      grid-column: span 1;
+    }
+
+    &--unlock-1 { background-image: url(../image/details-cards/auto-unlock_1.svg); }
+    &--unlock-2 { background-image: url(../image/details-cards/auto-unlock_2.svg); }
+    
+    &--range-1 { background-image: url(../image/details-cards/range&integrated-light_1.svg); }
+    &--range-2 { background-image: url(../image/details-cards/range&integrated-light_2.svg); }
+    
+    &--brakes-1 { background-image: url(../image/details-cards/Hydraulic-disc-brakes_1.svg); }
+    &--brakes-2 { background-image: url(../image/details-cards/Hydraulic-disc-brakes_2.svg); }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__caption {
+    @include card-title;
+    margin: 0;
+  }
+
+  &__text {
+    @include card-text;
+    margin: 0;
+  }
+
+  // Мобільний реверс для третьої картки (1 колонка до 3)
+  &--reverse {
+    .details-card__img {
+      &:first-child {
+        grid-column: span 1;
+      }
+      &:last-child {
+        grid-column: span 3;
+      }
+    }
+  }
+
+  // ==========================================
+  // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
+  // ==========================================
+  @include respond-to("tablet") {
+    gap: 32px;
+
+    &__gallery {
+      // Перемикаємося на 12-колонкову базу для більших екранів
+      grid-template-columns: repeat(12, 1fr); 
+      gap: 24px;
+    }
+
+    &__img {
+      height: 260px; /* Збільшуємо висоту під планшет */
+
+      // Пропорція 8 до 4
+      &:first-child {
+        grid-column: span 8;
+      }
+      &:last-child {
+        grid-column: span 4;
+      }
+    }
+
+    // Реверс для планшета
+    &--reverse {
+      .details-card__img {
+        &:first-child {
+          grid-column: span 4;
+        }
+        &:last-child {
+          grid-column: span 8;
+        }
+      }
+    }
+  }
+
+  // ==========================================
+  // ДЕСКТОПНА ВЕРСІЯ (Desktop)
+  // ==========================================
+  @include respond-to("desktop") {
+    gap: 32px;
+
+    &__gallery {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 32px;
+    }
+
+    &__img {
+      height: 440px; /* Великі прямокутники для десктопа */
+
+      // Залишається пропорція 8 до 4
+      &:first-child {
+        grid-column: span 8;
+      }
+      &:last-child {
+        grid-column: span 4;
+      }
+    }
+
+    // Реверс для десктопа
+    &--reverse {
+      .details-card__img {
+        &:first-child {
+          grid-column: span 4;
+        }
+        &:last-child {
+          grid-column: span 8;
+        }
+      }
+    }
+  }
+}
