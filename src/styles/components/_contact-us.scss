@@ -1,13 +1,13 @@
 .contact-us {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+
   // ==========================================
   // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
   // ==========================================
   padding: 80px 20px 40px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
 
   &__title {
     @include section-h2-title;
@@ -28,7 +28,6 @@
     flex-direction: column;
     gap: 24px;
     width: 100%;
-    font-style: normal; /* Скидаємо системний нахил тегу <address> */
   }
 
   &__info-block {
@@ -45,7 +44,8 @@
   }
 
   &__link,
-  &__text {
+  &__text,
+  .addres__link {
     @include footer-h3-title;
 
     margin: 0;
@@ -105,10 +105,12 @@
   &__input,
   &__textarea,
   &__button {
-    box-sizing: border-box;
     display: block;
+
+    box-sizing: border-box;
     width: 100%;
     border: none; /* Скидаємо стандартні рамки браузера */
+
     outline: none;
   }
 
@@ -121,19 +123,21 @@
   }
 
   &__textarea {
+    resize: vertical; /* Дозволяємо користувачу тягнути тільки вниз, щоб не ламати ширину */
     min-height: 148px;
     padding: 14px 20px;
     border-radius: 16px;
-    resize: vertical; /* Дозволяємо користувачу тягнути тільки вниз, щоб не ламати ширину */
 
     @include form-text;
   }
 
   &__button {
+    cursor: pointer;
+
     height: 56px;
     padding: 14px 16px;
     border-radius: 40px;
-    cursor: pointer;
+
     transition: opacity 0.2s ease;
 
     @include form-button;

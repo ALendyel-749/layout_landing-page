@@ -1,13 +1,13 @@
 .compare-bikes {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+
   // ==========================================
   // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
   // ==========================================
   padding: 92px 20px 40px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
 
   &__title {
     @include section-h2-title;
@@ -63,8 +63,8 @@
 
   &__image-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
   }
 

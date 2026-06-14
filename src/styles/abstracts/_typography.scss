@@ -5,21 +5,21 @@
 // Глобальні текстові блоки та заголовки
 // --------------------------------------------------------------------------
 @mixin header-title {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: -1.5px;
+  color: #fff;
   text-align: center;
+  letter-spacing: -1.5px;
 }
 
 @mixin section-h2-title {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 1;
+  color: #fff;
   letter-spacing: -1.5px;
 
   @include respond-to('tablet') {
@@ -28,91 +28,92 @@
 }
 
 @mixin section-text {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 23px;
   font-weight: 500;
   line-height: 1.4;
+  color: #fff;
   letter-spacing: 0;
 }
 
 // Елементи навігації та меню
 // --------------------------------------------------------------------------
 @mixin nav-title {
-  color: #1d1d1d;
   font-family: Poppins, sans-serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 1;
+  color: #1d1d1d;
   letter-spacing: 2px;
 }
 
 // Картки товарів (Bike Cards) та Деталей (Details)
 // --------------------------------------------------------------------------
 @mixin card-title {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.4;
+  color: #fff;
   letter-spacing: 0;
 }
 
 @mixin card-text {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
+  color: #fff;
   letter-spacing: 0;
 }
 
 @mixin card-price {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.4;
+  color: #fff;
   letter-spacing: 0;
 }
 
 // Форми та інтерактивні елементи (Контакти)
 // --------------------------------------------------------------------------
 @mixin form-text {
-  color: #7e7e83;
   font-family: Poppins, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42; // 20px / 14px
+  color: #7e7e83;
   letter-spacing: 0;
 }
 
 @mixin form-button {
-  color: #1d1d1d;
-  background-color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.68; // 27px / 16px
+  color: #1d1d1d;
   letter-spacing: 0;
+
+  background-color: #fff;
 }
 
 // Підвал сайту (Footer)
 // --------------------------------------------------------------------------
 @mixin footer-h3-title {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
+  color: #fff;
   letter-spacing: 0;
 }
 
 @mixin footer-p-title {
-  color: #fff;
   font-family: Poppins, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+  color: #fff;
   letter-spacing: 0;
 }

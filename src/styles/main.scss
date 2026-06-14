@@ -17,6 +17,11 @@
   background-color: #1d1d1d;
 }
 
+body:has([id="menu"]:target) {
+  overflow: hidden;
+  height: 100dvh;
+}
+
 .main {
   padding: 60px 20px 0;
 

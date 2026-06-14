@@ -2,10 +2,10 @@
 // DETAILS COMPONENT (Глобальна секція)
 // ==========================================
 .details {
-  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 40px 20px;
 
   &__title {
     @include section-h2-title;
@@ -66,12 +66,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    width: 100%;
+
     box-sizing: border-box;
+    width: 100%;
   }
 
   &__img {
     display: block;
+
     height: 160px; /* Фіксована висота для однакових мобільних прямокутників */
 
     background-repeat: no-repeat;

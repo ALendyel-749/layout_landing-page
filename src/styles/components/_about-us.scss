@@ -20,16 +20,16 @@
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
   @include respond-to('tablet') {
-    padding: 60px 72px;
-
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 24px;
     align-items: center;
 
+    padding: 60px 72px;
+
     &__title {
-      margin-bottom: 0; // Прибираємо маржин, бо тепер вони в один рядок через grid
       grid-column: span 3;
+      margin-bottom: 0; // Прибираємо маржин, бо тепер вони в один рядок через grid
     }
 
     &__text {
@@ -42,10 +42,7 @@
   // ==========================================
   @include respond-to('desktop') {
     padding: 80px 120px;
-    grid-template-columns: repeat(
-      12,
-      1fr
-    ); // Переводимо на 12 колонок для гармонії з шапкою
+    grid-template-columns: repeat(12, 1fr); // Переводимо на 12 колонок для гармонії з шапкою
 
     &__title {
       grid-column: span 5; // Заголовок займає 5 колонок ліворуч

@@ -1,34 +1,39 @@
 .menu {
-  // ==========================================
-  // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
-  // ==========================================
-  box-sizing: border-box;
+  pointer-events: none;
+
   position: fixed;
-  inset: 0;
   z-index: 100; /* Додав z-index, щоб меню точно перекривало весь контент сайту */
+  top: 0;
+  left: 0;
 
-  min-height: 100vh;
-  padding: 24px 20px 80px;
-
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
-  background-color: #c2c2c2;
+  // ==========================================
+  // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
+  // ==========================================
+  box-sizing: border-box;
+  width: 100%;
+  height: 100dvh;
+  padding: 24px 20px 80px;
+
   opacity: 0;
-  pointer-events: none;
+  background-color: #c2c2c2;
+
   transition: opacity 0.3s ease; /* Додав плавне згасання/появу меню */
 
   // Логіка відкриття меню через CSS Anchor (#menu)
   &:target {
-    opacity: 1;
     pointer-events: all;
+    opacity: 1;
   }
 
   &__top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__logo-link {
@@ -41,16 +46,18 @@
   }
 
   &__bottom {
-    margin-top: auto; /* Виштовхує контакти в самий низ меню на мобілці */
+    margin-top: 50px; /* Виштовхує контакти в самий низ меню на мобілці */
   }
 
   &__contact-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
   }
 
   &__contact-item {
@@ -77,6 +84,7 @@
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
   @include respond-to('tablet') {
+    grid-column: span 6;
     padding: 36px 72px 80px;
   }
 }

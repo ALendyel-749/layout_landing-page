@@ -1,4 +1,8 @@
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   // ==========================================
   // БАЗОВІ СТИЛІ (Мобільна версія / Mobile First)
   // ==========================================
@@ -6,19 +10,15 @@
   min-height: 100vh;
   padding: 24px 20px 80px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   background-image: url(../image/main-img/Image-main-mb-version.svg);
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center top;
+  background-size: cover;
 
   &__top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__icons {
@@ -35,38 +35,38 @@
     margin: 0;
     padding-bottom: 88px;
 
-    color: #fff;
     font-family: Poppins, sans-serif;
     font-size: 36px;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: -1.5px;
+    color: #fff;
     text-align: center;
+    letter-spacing: -1.5px;
   }
 
   // ==========================================
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
   @include respond-to('tablet') {
-    background-image: url(../image/main-img/Image-main_tablet.svg);
-    background-size: cover;
-    background-position: 100%;
-
-    width: 100%;
-    padding: 36px 72px 80px;
-
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 24px;
     place-content: space-between center;
+
+    width: 100%;
+    padding: 36px 72px 80px;
+
+    background-image: url(../image/main-img/Image-main_tablet.svg);
+    background-position: 100%;
+    background-size: cover;
 
     &__top {
       grid-column: span 6;
     }
 
     &__icons {
-      height: 32px;
       gap: 32px;
+      height: 32px;
     }
 
     &__bottom {
@@ -83,10 +83,10 @@
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
   @include respond-to('desktop') {
-    /* Додаємо фіксовані відступи зверху/знизу замість мобільних, щоб зафіксувати висоту 100vh */
-    padding: 48px 120px 80px;
     grid-template-columns: repeat(12, 1fr);
 
+    /* Додаємо фіксовані відступи зверху/знизу замість мобільних, щоб зафіксувати висоту 100vh */
+    padding: 48px 120px 80px;
     background-image: url(../image/main-img/Image-main_desktop.svg);
     background-position: center;
     &__top {
