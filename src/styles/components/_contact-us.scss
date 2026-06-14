@@ -57,7 +57,7 @@
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
   @include respond-to('tablet') {
-    padding: 100px 72px 60px;
+    padding: 100px 72px 0;
 
     &__wrapper {
       display: grid;
@@ -75,7 +75,7 @@
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
   @include respond-to('desktop') {
-    padding: 140px 120px 80px;
+    padding: 140px 120px 0;
 
     &__wrapper {
       grid-template-columns: repeat(12, 1fr);
@@ -141,10 +141,6 @@
     transition: opacity 0.2s ease;
 
     @include form-button;
-
-    &:hover {
-      opacity: 0.9; /* Базовий ефект при наведенні */
-    }
   }
 
   // ==========================================

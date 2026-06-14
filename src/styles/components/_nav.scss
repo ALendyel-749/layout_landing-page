@@ -11,8 +11,13 @@
 
     margin: 0;
     padding: 0;
+    padding-top: 24px;
 
     list-style: none;
+
+    @include respond-to('tablet') {
+      padding-top: 8px;
+    }
   }
 
   &__item {
@@ -22,16 +27,39 @@
   &__link {
     @include nav-title; /* Наш фірмовий шрифт з abstracts/typography */
 
+    position: relative;
+
     display: inline-block;
+
     text-decoration: none;
     text-transform: uppercase;
+
     transition:
       color 0.2s ease,
       transform 0.2s ease;
 
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+
+      background-color: #000;
+
+      transition: transform 0.3s ease;
+    }
+
     &:hover {
-      transform: translateX(4px); /* Легке елегантне зсування тексту праворуч */
-      color: #7e7e83; /* Плавна зміна кольору при наведенні для кращого UX */
+      &::after {
+        transform: scaleX(1);
+      }
     }
   }
 }

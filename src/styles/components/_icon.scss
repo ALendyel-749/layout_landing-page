@@ -1,31 +1,171 @@
+@keyframes phone-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(15deg);
+  } // нахил вправо
+  30% {
+    transform: rotate(-15deg);
+  } // нахил вліво
+  45% {
+    transform: rotate(10deg);
+  } // вправо, але менше
+  60% {
+    transform: rotate(-10deg);
+  } // вліво, але менше
+  75% {
+    transform: rotate(5deg);
+  } // затухання
+  90% {
+    transform: rotate(0deg);
+  } // вирівнювання
+  100% {
+    transform: rotate(0deg);
+  } // пауза
+}
+
 .icon {
+  overflow: visible;
+
   // ==========================================
   // БАЗОВІ СТИЛІ (Глобальний компонент іконки)
   // ==========================================
-  display: block;
+  display: inline-flex;
+  align-items: center;
 
   width: 24px;
   height: 24px;
+
+  text-decoration: none;
 
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain; /* Іконка завжди масштабується під розмір блока */
 
-  transition: opacity 0.2s ease;
-
   &:hover {
     opacity: 0.8; /* Базовий ефект при наведенні для інтерактивності */
+  }
+
+  &__text {
+    transform: translateX(-15px);
+
+    width: auto;
+    margin-right: 0;
+
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+
+    opacity: 0;
   }
 
   // ==========================================
   // МОДИФІКАТОРИ (Конкретні зображення)
   // ==========================================
   &--phone {
-    background-image: url(../image/icons/Phone-logo.svg);
+    flex-direction: row-reverse;
+
+    &::before {
+      content: '';
+
+      display: block;
+      flex-shrink: 0;
+
+      width: 24px;
+      height: 24px;
+
+      background-image: url(../image/icons/Phone-logo.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:hover {
+      width: auto;
+
+      &::before {
+        animation: phone-ring 0.6s ease-in-out infinite;
+      }
+
+      .icon__text {
+        transform: translateX(0);
+        margin-right: 12px;
+        opacity: 1;
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease,
+          margin-right 0.3s ease;
+      }
+    }
   }
 
   &--menu {
-    background-image: url(../image/icons/Burger-menu.svg);
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    background-image: none;
+
+    .icon__burger-line {
+      position: relative;
+
+      display: block;
+
+      width: 18px;
+      height: 2px;
+      border-radius: 10px;
+
+      background-color: #fff;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: -6px;
+        left: 0;
+
+        width: 18px;
+        height: 2px;
+        border-radius: 10px;
+
+        background-color: #fff;
+      }
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+
+        width: 18px;
+        height: 2px;
+        border-radius: 10px;
+
+        background-color: #fff;
+      }
+    }
+
+    &:hover {
+      .icon__burger-line {
+        width: 18px;
+
+        &::before {
+          width: 13px;
+          transition: width 0.3s ease-out;
+        }
+
+        &::after {
+          width: 13px;
+          transition: width 0.3s ease-out;
+        }
+      }
+    }
   }
 
   &--close {
