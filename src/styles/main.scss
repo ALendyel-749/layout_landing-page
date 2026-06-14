@@ -17,7 +17,7 @@
   background-color: #1d1d1d;
 }
 
-body:has([id="menu"]:target) {
+body:has([id='menu']:target) {
   overflow: hidden;
   height: 100dvh;
 }
