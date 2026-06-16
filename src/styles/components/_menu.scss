@@ -75,7 +75,10 @@
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
   @include respond-to('tablet') {
-    grid-column: span 6;
     padding: 36px 72px 80px;
+  }
+
+  @include respond-to('desktop') {
+    padding: 48px 120px 80px;
   }
 }
