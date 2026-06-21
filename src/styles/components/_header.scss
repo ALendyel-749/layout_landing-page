@@ -10,7 +10,7 @@
   min-height: 100vh;
   padding: 24px 20px 80px;
 
-  background-image: url(../image/main-img/Image-main-mb-version.svg);
+  background-image: url(../images/main-img/Image-main-mb-version.svg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -56,7 +56,7 @@
     width: 100%;
     padding: 36px 72px 80px;
 
-    background-image: url(../image/main-img/Image-main_tablet.svg);
+    background-image: url(../images/main-img/Image-main_tablet.svg);
     background-position: 100%;
     background-size: cover;
 
@@ -87,7 +87,7 @@
 
     /* Додаємо фіксовані відступи зверху/знизу замість мобільних, щоб зафіксувати висоту 100vh */
     padding: 48px 120px 80px;
-    background-image: url(../image/main-img/Image-main_desktop.svg);
+    background-image: url(../images/main-img/Image-main_desktop.svg);
     background-position: center;
     &__top {
       grid-column: span 12;
