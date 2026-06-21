@@ -19,10 +19,11 @@
 
   &__img {
     display: block;
+
     width: 100%;
     height: 160px; /* Фіксована висота для однакових мобільних прямокутників */
+    
     object-fit: contain;
-
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
