@@ -87,7 +87,6 @@
     /* Додаємо фіксовані відступи зверху/знизу замість мобільних, щоб зафіксувати висоту 100vh */
     padding: 48px 120px 80px;
 
-    background-position: center;
     &__top {
       grid-column: span 12;
     }
