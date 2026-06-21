@@ -1,19 +1,73 @@
 // ==========================================
-// DETAILS CARD COMPONENT (Картки)
+// 1. GLOBAL DETAILS SECTION (Глобальна секція)
+// ==========================================
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+
+  &__title {
+    @include section-h2-title;
+
+    margin: 0;
+    text-align: center;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @include respond-to('tablet') {
+    padding: 120px 72px 60px;
+
+    &__title {
+      padding-bottom: 64px;
+    }
+
+    &__grid {
+      gap: 64px;
+    }
+  }
+
+  @include respond-to('desktop') {
+    padding: 160px 120px 80px;
+
+    &__title {
+      padding-bottom: 80px;
+    }
+
+    &__grid {
+      gap: 120px;
+    }
+  }
+}
+
+// ==========================================
+// 2. DETAILS CARD COMPONENT (Самі картки всередині)
 // ==========================================
 .details-card {
   display: flex;
-  flex-direction: column; /* Текст завжди строго під картинками */
+  flex-direction: column;
   gap: 24px;
   width: 100%;
 
   &__gallery {
-    // СТРОГО ЗА МОБІЛЬНИМ МАКЕТОМ: 4-колонковий Grid
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 
     box-sizing: border-box;
+
     width: 100%;
   }
 
@@ -21,40 +75,43 @@
     display: block;
 
     width: 100%;
-    height: 160px; /* Фіксована висота для однакових мобільних прямокутників */
-    
-    object-fit: contain;
+
+    height: 160px;
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
-    // ВИПРАВЛЕНО ДЛЯ МОБІЛОК: тепер обидві картинки займають по 2 колонки (50/50) і є однаковими
     &:first-child {
       grid-column: span 2;
     }
+
     &:last-child {
       grid-column: span 2;
     }
 
     &--unlock-1 {
-      background-image: url(../../images/details-cards/auto-unlock_1-mb.png);
+      background-image: url(../images/details-cards/auto-unlock_1-mb.png);
     }
+
     &--unlock-2 {
-      background-image: url(../../images/details-cards/auto-unlock_2-mb.png);
+      background-image: url(../images/details-cards/auto-unlock_2-mb.png);
     }
 
     &--range-1 {
-      background-image: url(../../images/details-cards/range-integrated-light_1-mb.png);
+      background-image: url(../images/details-cards/range&integrated-light_1-mb.png);
     }
+
     &--range-2 {
-      background-image: url(../../images/details-cards/range-integrated-light_2-mb.png);
+      background-image: url(../images/details-cards/range&integrated-light_2-mb.png);
     }
 
     &--brakes-1 {
-      background-image: url(../../images/details-cards/Hydraulic-disc-brakes_1-mb.png);
+      background-image: url(../images/details-cards/Hydraulic-disc-brakes_1-mb.png);
     }
+
     &--brakes-2 {
-      background-image: url(../../images/details-cards/Hydraulic-disc-brakes_2-mb.png);
+      background-image: url(../images/details-cards/Hydraulic-disc-brakes_2-mb.png);
     }
   }
 
@@ -77,49 +134,44 @@
     margin: 0;
   }
 
-  // Мобільний реверс: оскільки на мобільці картинки однакові (2 і 2),
-  // для третьої картки залишаємо симетрію 2 на 2, щоб вони не ламалися
   &--reverse {
     .details-card__img {
       &:first-child {
         grid-column: span 2;
       }
+
       &:last-child {
         grid-column: span 2;
       }
     }
   }
 
-  // ==========================================
-  // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
-  // ==========================================
   @include respond-to('tablet') {
     gap: 32px;
 
     &__gallery {
-      // Перемикаємося на 12-колонкову базу для більших екранів
       grid-template-columns: repeat(12, 1fr);
       gap: 24px;
     }
 
     &__img {
-      height: 260px; /* Збільшуємо висоту під планшет */
+      height: 260px;
 
-      // На планшеті вмикається пропорція розділення 8 до 4
       &:first-child {
         grid-column: span 8;
       }
+
       &:last-child {
         grid-column: span 4;
       }
     }
 
-    // Реверс для планшета (поділені 4 до 8)
     &--reverse {
       .details-card__img {
         &:first-child {
           grid-column: span 4;
         }
+
         &:last-child {
           grid-column: span 8;
         }
@@ -127,9 +179,6 @@
     }
   }
 
-  // ==========================================
-  // ДЕСКТОПНА ВЕРСІЯ (Desktop)
-  // ==========================================
   @include respond-to('desktop') {
     gap: 32px;
 
@@ -139,23 +188,23 @@
     }
 
     &__img {
-      height: 440px; /* Великі прямокутники для десктопа */
+      height: 440px;
 
-      // На десктопі залишається пропорція розділення 8 до 4
       &:first-child {
         grid-column: span 8;
       }
+
       &:last-child {
         grid-column: span 4;
       }
     }
 
-    // Реверс для десктопа (поділені 4 до 8)
     &--reverse {
       .details-card__img {
         &:first-child {
           grid-column: span 4;
         }
+
         &:last-child {
           grid-column: span 8;
         }
