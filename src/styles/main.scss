@@ -22,17 +22,17 @@ body:has([id='menu']:target) {
   height: 100dvh;
 }
 
-.main {
-  padding: 60px 20px 0;
+// .main {
+//   padding: 60px 20px 0;
 
-  @include respond-to(tablet) {
-    padding: 24px 72px 80px;
-  }
+//   @include respond-to(tablet) {
+//     padding: 24px 72px 80px;
+//   }
 
-  @include respond-to('desktop') {
-    padding: 120px;
-  }
-}
+//   @include respond-to('desktop') {
+//     padding: 120px;
+//   }
+// }
 
 // * {
 //   outline: 1px solid red !important;

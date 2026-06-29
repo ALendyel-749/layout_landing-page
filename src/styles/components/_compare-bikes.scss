@@ -27,7 +27,7 @@
   // ПЛАНШЕТНА ВЕРСІЯ (Tablet)
   // ==========================================
   @include respond-to('tablet') {
-    padding: 132px 72px 60px;
+    padding: 132px 72px 0;
 
     &__grid {
       display: grid;
@@ -42,7 +42,7 @@
   // ДЕСКТОПНА ВЕРСІЯ (Desktop)
   // ==========================================
   @include respond-to('desktop') {
-    padding: 160px 120px 80px;
+    padding: 160px 120px 0;
 
     &__grid {
       /* На десктопі можна збільшити відстань між картками */

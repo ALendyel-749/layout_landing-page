@@ -25,7 +25,7 @@
     gap: 24px;
     align-items: center;
 
-    padding: 60px 72px;
+    padding: 60px 72px 0;
 
     &__title {
       grid-column: span 3;
@@ -46,7 +46,7 @@
       1fr
     ); // Переводимо на 12 колонок для гармонії з шапкою
 
-    padding: 80px 120px;
+    padding: 80px 120px 0;
 
     &__title {
       grid-column: span 5; // Заголовок займає 5 колонок ліворуч

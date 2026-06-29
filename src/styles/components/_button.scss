@@ -38,7 +38,11 @@
   // Модифікатор для кнопки в секції Details
   &--explore {
     @include respond-to('tablet') {
-      width: 100%; /* На планшеті стає на всю ширину відведених їй колонок */
+      grid-column: 2/6; /* На планшеті стає на всю ширину відведених їй колонок */
+    }
+
+    @include respond-to('desktop') {
+      grid-column: 5/9;
     }
   }
 }
