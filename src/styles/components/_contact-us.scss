@@ -9,6 +9,27 @@
   // ==========================================
   padding: 80px 20px 40px;
 
+  &__effect {
+    transition: transform 0.1s ease;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.1s ease;
+
+    &:hover {
+      text-shadow:
+        0 0 10px #fff,
+        0 0 20px rgba(255, 255, 255, 0.8);
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    &:active {
+      transform: scale(0.98);
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+  }
+
   &__title {
     @include section-h2-title;
 
@@ -48,6 +69,7 @@
   .addres__link {
     @include footer-h3-title;
 
+    align-self: flex-start;
     margin: 0;
     color: #fff;
     text-decoration: none;

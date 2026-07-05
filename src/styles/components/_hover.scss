@@ -1,0 +1,17 @@
+.hover-effect {
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.4);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 25px 4px rgba(255, 255, 255, 0.6);
+  }
+}

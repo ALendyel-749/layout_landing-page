@@ -80,6 +80,19 @@
     background-position: center;
     background-size: cover;
 
+    &:hover {
+      // Робимо поточний елемент поверх інших під час збільшення
+      position: relative;
+      z-index: 1;
+      transform: scale(1.04); /* Трішки збільшуємо картинку (на 4%) */
+
+      // Додаємо акуратну рамку (колір та товщину підбери під дизайн, наприклад білу чи сіру)
+      outline: 2px solid rgba(255, 255, 255, 0.7);
+
+      // Додатково: можна додати легке світіння/тінь, щоб підкреслити об'єм
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
     &:first-child {
       grid-column: span 2;
     }

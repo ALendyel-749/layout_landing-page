@@ -62,16 +62,34 @@
   width: 100%;
 
   &__image-wrapper {
-    display: flex;
+    position: relative;
+
+    overflow: hidden;
+    display: block;
     align-items: center;
     justify-content: center;
+
     width: 100%;
   }
 
   &__img {
+    will-change: transform;
+
+    display: block;
+
     max-width: 100%;
     height: auto;
+
     object-fit: contain;
+
+    transition:
+      transform 0.4s ease,
+      filter 0.4s ease;
+
+    &:hover {
+      transform: scale(1.08);
+      filter: brightness(1.05);
+    }
   }
 
   &__content {
